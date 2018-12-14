@@ -1,0 +1,44 @@
+$black: #000;
+$white: #FFF;
+$gold: #C4BCB5;
+$darkGold: #816969;
+$red: #ff2600;
+$pink: #f68a8a;
+$grey: #6a6a6a;
+
+//--------DEVICE SIZE--------
+$small-mobile: 400px;
+$tablet-width: 648px;
+$desktop-width: 1023px;
+$container-width: 1139px;
+
+@mixin small-mobile {
+  @media (max-width: $small-mobile) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width + 1px}) {
+    @content;
+  }
+}
+
+@mixin container {
+  @media (min-width: #{$desktop-width}) and (max-width: #{$container-width}) {
+    @content;
+  }
+}

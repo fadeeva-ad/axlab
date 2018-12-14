@@ -1,0 +1,30 @@
+@import 'variables';
+
+.h2{
+	text-transform: uppercase;
+	font-weight: 300;
+	font-size: 36px;
+	line-height: 45px;
+	margin: 0;
+
+	@include container {
+		font-size: 28px;
+	}
+
+	strong{
+		font-weight: 600;
+	}
+	
+}
+
+.title_h1{
+    font-style: normal;
+    font-weight: 300;
+    line-height: 40px;
+    font-size: 36px;
+	text-transform: uppercase;
+	
+	@include container {
+		font-size: 32px;
+	}
+}

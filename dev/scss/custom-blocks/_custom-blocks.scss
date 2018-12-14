@@ -1,0 +1,22 @@
+@import '../blocks/variables';
+
+.full-w{
+    width: calc(100vw - 16px);
+}
+
+.l-w{
+    width: calc(85vw - 16px);
+}
+
+.m-w{
+    width: calc(50vw - 16px);
+}
+
+@import 'main-block';
+@import 'first-block';
+@import 'portfolio';
+@import 'article';
+@import 'order';
+@import 'cat-popup';
+@import 'sidebar';
+@import 'cat';

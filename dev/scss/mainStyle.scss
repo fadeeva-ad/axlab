@@ -1,0 +1,37 @@
+@import 'blocks/fonts';
+@import 'blocks/variables';
+@import 'blocks/blocks';
+@import 'custom-blocks/custom-blocks';
+
+
+.no-scroll{
+    overflow: hidden;
+} 
+ 
+.hide{
+    
+    &_on-tablet{
+        @include tablet{   
+            display: none;  
+        }
+    }
+ 
+    &_on-mobile{
+        @include mobile{
+            display: none;  
+        } 
+    } 
+    
+    &_on-desktop{
+        @include desktop{ 
+            display: none;
+        }
+    }
+    
+    &_on-tablet-and-desktop{
+        
+        @media (min-width: $tablet-width){
+            display: none;
+        }
+    }
+}

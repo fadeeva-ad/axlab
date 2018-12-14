@@ -1,0 +1,76 @@
+@import 'variables';
+
+.container {
+    max-width: 1109px;
+    margin: auto;
+
+    @include container {
+        padding: 0px 30px;
+    }
+
+    @include tablet {
+        padding: 0 20px;
+    }
+
+    @include mobile {
+        padding: 0 14px;
+    }
+}
+
+
+.page {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background-image: url("img/pixel-bg.svg");
+    background-position-x: -164px;
+    background-position-y: -200px;
+
+    @include tablet {
+        padding-top: 55px;
+    }
+
+    @include mobile {
+        background: transparent;
+    }
+}
+
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+
+
+
+// @import '../../node_modules/filepond/dist/filepond';
+@import 'fancybox';
+@import 'swiper';
+@import 'animate';
+@import 'input';
+@import 'headers';
+@import 'button';
+@import 'search';
+@import 'radio';
+@import 'counter';
+@import 'modal';
+@import 'bread-crumbs';
+@import 'item';
+@import 'product-slider';
+@import 'header';
+@import 'main-slider'; 
+@import 'footer';
+@import 'filter';
+@import 'pagination';
+@import 'product-page';
+@import 'instagram';
+@import 'form';
+@import 'catalog';
+@import 'categories';
+@import 'popular-products';
+@import 'cart';

@@ -1,0 +1,29 @@
+@import '../blocks/variables';
+
+.article{
+
+    .container{
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &__img{
+        margin-right: 87px;
+        max-width: 50%;
+    }
+
+    &__text{
+        max-width: 50%;
+        line-height: 32px;
+        font-size: 18px;
+        max-height: 70%;
+        overflow: auto;
+    }
+
+    &__map{
+        position: absolute;
+        bottom: 0;
+        transform: translate(50%, 50%);
+    }
+}

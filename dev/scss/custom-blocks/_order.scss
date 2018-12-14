@@ -1,0 +1,119 @@
+@import '../blocks/variables';
+
+.order {
+    display: flex;
+
+
+    @include big-height {
+        padding-top: 0;
+        align-items: center;
+    }
+
+    @include small-height {
+        padding-top: 0;
+        align-items: center;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .h2 {
+        text-align: left;
+
+    }
+
+    &__subtitle {
+        line-height: 23px;
+        font-size: 18px;
+        color: #333333;
+        margin-top: 11px;
+    }
+
+    &__form {
+        margin-top: 83px;
+
+        @include container {
+            margin-top: 25px;
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        left: 140px;
+        z-index: -1;
+    }
+
+    &__footer {
+        margin-top: 73px;
+        display: flex;
+        align-items: flex-end;
+
+        @include container {
+            margin: 0px 0px 20px;
+        }
+
+        @media (min-width: 1023px) and (max-height:790px) {
+            margin-bottom: 10px;
+        }
+
+        .contacts {
+            color: $black;
+            text-align: left;
+
+            &__item {
+                display: inline-block;
+                margin-right: 80px;
+            }
+        }
+
+        .socials {
+            &__item {
+                display: inline-block;
+                margin-right: 34px;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__form-wrapper {
+        max-width: 70%;
+    }
+
+    &__another {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        margin-left: 50px;
+    }
+
+    &__big-btn {
+        background-color: $orange;
+        color: $white;
+        line-height: 33px;
+        font-size: 24px;
+        text-align: center;
+        flex: auto;
+        border-radius: 5px;
+        max-width: 173px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all ease-out 0.25s;
+
+        &:first-child {
+            margin-bottom: 45px;
+        }
+
+        &:hover{
+            background-color: #d32f00;
+        }
+    }
+
+    &__another-title {
+        transform: rotate(-90deg)
+    }
+
+}

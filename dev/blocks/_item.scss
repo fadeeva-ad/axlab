@@ -1,0 +1,157 @@
+@import 'variables';
+
+.item {
+    text-decoration: none;
+    color: inherit;
+
+    &__img {
+        display: block;
+        width: 100%;
+        padding-bottom: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &_cover{
+            background-size: cover;
+        }
+
+        @include tablet {
+            padding-bottom: 60%;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #FBFBFB;
+        padding: 20px 24px;
+
+        @include mobile {
+            padding: 4px 8px;
+        }
+    }
+
+    &__text-wrapper {
+        flex: auto;
+    }
+
+    &__flag {
+        opacity: 0.3;
+        margin-top: 15px;
+    }
+
+    &__product-name {
+        line-height: 24px;
+        font-size: 24px;
+        font-weight: 300;
+
+        @include mobile {
+            line-height: 18px;
+            font-size: 18px;
+        }
+    }
+
+    &__info {
+        margin-top: 10px;
+        line-height: 18px;
+        color: #727272;
+        font-size: 18px;
+        font-weight: 300;
+
+        @include mobile {
+            line-height: 13px;
+            font-size: 13px;
+        }
+    }
+
+    &__price {
+        margin-top: 6px;
+        line-height: 18px;
+        font-size: 18px;
+        font-weight: 500;
+
+        @include mobile {
+            line-height: 14px;
+            font-size: 14px;
+        }
+    }
+
+    &__small-text {
+        margin-top: 7px;
+        line-height: 13px;
+        font-size: 13px;
+        font-weight: 300;
+
+        @include mobile {
+            line-height: 10px;
+            font-size: 10px;
+        }
+    }
+
+    &__show-more {
+        cursor: pointer;
+
+        &_active {
+            .item__arrow {
+                transform: rotate(90deg) scale(-1);
+            }
+        }
+    }
+
+    &__arrow {
+        margin-left: 5px;
+        height: 13.28px;
+        transform: rotate(90deg);
+        transition: all ease-out 0.25s;
+        cursor: pointer;
+
+        &_prev {
+            transform: rotate(180deg);
+        }
+
+        &_next {
+            transform: rotate(0);
+        }
+
+        path {
+            fill: $black;
+        }
+    }
+
+
+    &__hidden-info {
+        display: none;
+        margin-top: 10px;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+
+        @include tablet {
+            flex-direction: column;
+            margin-top: 6px;
+            align-items: flex-start;
+        }
+    }
+
+    .counter {
+        font-size: 16px;
+        width: 68px;
+        margin-right: 8px;
+    }
+
+    &__buy {
+        width: 45%;
+
+        @include tablet {
+            width: 100%;
+            margin-top: 8px;
+        }
+    }
+}

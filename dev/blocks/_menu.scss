@@ -1,0 +1,200 @@
+@import "variables";
+
+.menu{
+
+    &__left, &__right{
+        position: fixed;
+        height: 100vh;
+        width: 50%;
+        transition: all ease-in 0.4s;
+        top: 0;
+        z-index: 110;
+    }
+
+    &__left{
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        transform: translateY(-100%); 
+        left: 0;
+
+        @include tablet{
+            display: none;
+        }
+
+        &_active{
+            transform: translateY(0);
+        }
+    }
+
+    &__right{
+        background: rgba(0, 0, 0, 0.85);
+        padding: 100px 60px 20px;
+        box-sizing: border-box;
+        color: $white;
+        font-size: 24px;
+        line-height: 1;
+        transform: translateY(100%);
+        right: 0;
+        overflow: auto;
+
+        @include tablet{
+            width: 100%;
+            transform: translate(-100%, 0); 
+            padding: 60px 20px;
+            font-size: 20px;
+        }
+
+        &_active{
+            transform: translate(0);
+        }
+    }
+
+    &__close{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+
+        path, line{
+            stroke: $white;  
+        }
+    }
+
+    &__list{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        &-item{
+            text-transform: uppercase;
+            margin-bottom: 30px;
+
+            @include tablet{
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+        }
+    }
+
+    &__link{
+        text-decoration: none;
+        color: inherit;
+        display: inline-block;
+        position: relative;
+
+        &:after{
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: $white;
+            transition: all ease-in 0.3s;
+        }
+
+        &:hover{
+            &.menu__link:after{
+                width: 100%;
+            }
+        }
+    }
+
+    &__sublist{
+        margin: 0;
+        margin-top: 30px;
+        padding: 0;
+        padding-left: 20px;
+        list-style: none;
+        position: relative;
+        display: none;
+
+        @include tablet{
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        &:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 1px;
+            background-color: $white;
+        }
+
+        &-item{
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-decoration: unset;
+        }
+    }
+
+    &__drop-down{
+        display: none;
+        width: 50px;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        
+        img{
+            transform: rotate(180deg);
+            transition: all ease-out 0.3s;
+        }
+
+        @include tablet{
+            display: flex;
+        }
+
+        &_active{
+            img{
+                transform: rotate(0deg);
+            }  
+        }
+    }
+}
+
+
+.flexMenu-popup {
+    padding: 0;
+    margin: 0;
+    background-color: $white;
+    & > li{
+        padding: 10px;
+    }
+    & .menu__item{
+        margin-left: 0;
+    }
+}
+.flexMenu-viewMore{
+    display: inline-block;
+    margin-left: 25px;  
+    & > a{
+        text-decoration: none;
+        color: black;
+    }
+    &:hover{
+        & .flexMenu-popup{
+            display: block !important;
+        }
+    }
+}
+.flexMenu-viewMore > a:after {
+    display: inline-block;
+    content:"";
+    border-left:0.3em solid transparent;
+    border-right:0.3em solid transparent;
+    border-top:0.4em solid $orange;
+    margin-left:0.4em;
+    position: relative;
+    top: -.1em;
+}
+.flexMenu-popup > li > a, .flexMenu-popup > li {
+    display: block;
+}

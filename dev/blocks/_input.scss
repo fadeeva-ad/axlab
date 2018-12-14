@@ -1,0 +1,27 @@
+@import '_variables';
+
+.input{
+    display: block;
+
+    input, textarea{
+        border: 1px solid #EDEBE9;
+        height: 27px;
+        width: 100%;
+        display: block;
+        padding-left: 10px;
+        font: 400 14px 'Montserrat';
+        
+        &::placeholder {
+            color: $black;
+            font: 400 14px 'Montserrat';
+        }
+    }
+    
+    &_textarea{
+        
+        textarea{
+            resize: none;
+            height: 116px;
+        }
+    }
+}

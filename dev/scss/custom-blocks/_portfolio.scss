@@ -1,0 +1,108 @@
+@import '../blocks/variables';
+
+.portfolio {
+
+    .container {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__all-projects {
+        transform: rotate(-90deg) translateY(-297%);
+        text-decoration: none;
+        line-height: 18px;
+        font-size: 18px;
+        text-transform: uppercase;
+        color: $black;
+        position: absolute;
+        left: 0;
+        top: 50%;
+    }
+
+    &__counter {
+        font-weight: 300;
+        line-height: 24px;
+        font-size: 24px;
+        text-transform: uppercase;
+        color: #ABABAB;
+        margin: 25px 0;
+        text-align: center;
+    }
+
+    &__slider {
+        max-height: 800px;
+        position: relative;
+        padding: 0 60px;
+        @include medium-height {
+            max-width: 70vh;
+        }
+
+        @include small-height {
+            max-height: 80vh;
+        }
+
+        .swiper-wrapper {
+            transition-timing-function: cubic-bezier(0.41, 0.35, 0.32, 1.15);
+        }
+
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__nav{
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+    }
+
+    &__arrow-next {
+        transform: rotate(180deg);
+        cursor: pointer;
+        transition: all ease-out 0.25s; 
+
+        svg {
+            user-select: none;
+        }
+
+        path {
+            transition: all ease-out 0.25s;
+        }
+
+        &:hover {
+            path {
+                fill: $black;
+            }
+        }
+    }
+
+    &__arrow-prev {
+        cursor: pointer;
+        transition: all ease-out 0.25s;
+        opacity: 0;
+
+        svg {
+            user-select: none;
+        }
+
+        path {
+            transition: all ease-out 0.25s;
+        }
+
+        &:hover {
+            path {
+                fill: $black;
+            }
+        }
+    }
+
+    &__slide-img {
+        max-width: 100%;
+    }
+}

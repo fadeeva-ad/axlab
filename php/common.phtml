@@ -1,0 +1,64 @@
+<?php
+/**
+ * Точка входа в шаблон axlab.
+ *
+ * В шаблоне используется:
+ *   - Кастомное расширение PHP-шаблонизатора `AxlabPhpExtension`
+ *   - Кастомный файл config.ini
+ *   - Сборщик css и js-ресурсов gulp, @see gulpfile.js
+ *
+ * @var umiTemplaterPHP|ViewPhpExtension|AxLabPhpExtension $this
+ * @var array $variables
+ */
+
+$this->initializeCommonVariables($variables);
+// print_r($variables);
+
+?>
+<!DOCTYPE html>
+<html lang="ru">
+<meta charset="utf-8">
+<title><?= $this->escape($variables['title']) ?></title>
+<meta name="description" content="<?= $this->escape($variables['meta']['description']) ?>">
+<meta name="keywords" content="<?= $this->escape($variables['meta']['keywords']) ?>">
+<base href="<?= $this->getResourceDirectory() ?>">
+<?= $this->macros('content', 'includeFrontendResources') ?>
+<?= $this->getCanonicalLinkTag($variables) ?>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7,IE=edge">
+<meta name="author" content="Umisoft">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#B29475">
+<meta name="theme-color" content="#B29475">
+<meta name="msapplication-navbutton-color" content="#B29475">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#B29475">
+<meta name="msapplication-navbutton-color" content="#B29475">
+<link  rel="icon"  href="production/img/logo.png">
+<link rel="stylesheet" href="production/style.css">
+
+
+
+
+<body class="page">
+    <?= $this->render($variables, 'blocks/header') ?>
+
+    <div class="modals">
+      <?= $this->render($variables, 'blocks/sidebar') ?>
+    </div>
+    <?= $this->render($variables, 'blocks/horizon') ?>
+    <div class="main-block middle scroll">
+    <?php if (empty($variables['pageId'])): // notfound-page ?>
+	    <?= $this->render($variables, 'content/notfound') ?>
+    <?php elseif ($variables['pageId']==1): // Home ?>
+	    <?= $this->render($variables, 'content/home') ?>
+    <?php endif; ?>
+      
+    </div>
+    <?= $this->render($variables, 'blocks/footer') ?>
+</body>
+
+</html>
+

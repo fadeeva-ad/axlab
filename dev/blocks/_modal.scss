@@ -1,0 +1,47 @@
+@import 'variables';
+
+.modal {
+    display: none;
+    width: 594px;
+    padding: 48px 70px 26px;
+
+    &__title {
+        margin: 0;
+        line-height: 29px;
+        font-weight: 400;
+        font-size: 24px;
+        text-align: center;
+        letter-spacing: 0.1em;
+    }
+
+    &__buttons-wrapper {
+        margin-top: 31px;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    &__btn {
+        width: 202px;
+        height: 47px;
+        border-radius: 11px;
+        background: #EBE5E3;
+        color: $black;
+        line-height: 14px;
+        font-size: 14px;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: lowercase;
+
+        &_light {
+            background: #F5F3F2;
+        }
+    }
+
+}
+
+.fancybox-slide--html .fancybox-close-small{
+    right: 10px;
+    top: 5px;
+    padding: 0;
+}

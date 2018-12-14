@@ -1,0 +1,64 @@
+@import 'variables';
+
+.btn{
+	display: inline-block;
+	display: inline-flex;
+    color: #fff;
+    text-decoration: none;
+    background: $orange;
+	border-radius: 20px;
+	border: 0;
+    height: 45px;
+	line-height: 45px;  
+	cursor: pointer;
+    font-size: 18px;
+    padding-left: 50px;
+    padding-right: 26px;
+    position: relative;
+	user-select: none;
+	pointer-events: auto;
+	transition: all 0.25s ease-out;
+
+	&:hover{
+		background-color: darken($orange, 10%);
+	}
+
+	@include container {
+		height: 35px;
+		line-height: 35px;
+	}
+	
+	@include mobile{
+		font-size: 16px;
+	}
+	
+	&_without-icon{
+		padding: 0 10px;
+		height: 35px;
+		line-height: 35px;
+	}
+	
+	&_light{
+		box-shadow: 0px 4px 44px rgba(255, 33, 3, 0.5);
+	}
+	
+	&_mobile-main{
+		margin-bottom: 42px;
+		background: linear-gradient(98.26deg, #E91C00 4.43%, rgb(252, 73, 24) 95.11%), #C4C4C4;
+	}
+	
+	&__icon{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 10px;
+		max-height: 31px;
+		transition: all ease-out 3s;
+		z-index: 1;
+
+		@include container {
+			max-height: 25px;
+		}
+	}
+}
+

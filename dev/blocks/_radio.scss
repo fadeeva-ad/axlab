@@ -1,0 +1,56 @@
+@import 'variables';
+
+.radio{
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+
+    input{
+        display: none;
+
+        &:checked{
+            &~.radio__mask:after{
+                opacity: 1;
+            }
+        }
+  
+    }
+    
+    &__mask{
+        min-width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 1px solid #BCBCBC;
+        margin-right: 9px;
+        position: relative;
+        cursor: pointer;
+
+        @include tablet{
+            min-width: 24px;
+            height: 24px;
+        }
+
+        &:after{
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            background-color: $darkGold;
+            opacity: 0;
+            transition: all ease-out 0.25s;
+
+            @include tablet{
+                min-width: 18px;
+                height: 18px;
+            }
+        }
+    }
+    
+
+    &__text{
+        font-size: 14px;
+    }
+}

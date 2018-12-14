@@ -1,0 +1,77 @@
+$black: #000;
+$white: #FFF;
+$gold: #C4BCB5;
+$darkGold: #816969;
+$red: #ff2600;
+$pink: #f68a8a;
+$grey: #1E212B;
+$orange: #FF3E07;
+
+
+//--------DEVICE SIZE--------
+$small-mobile: 400px;
+$tablet-width: 648px;
+$desktop-width: 1023px;
+$container-width: 1593px;
+
+$normal-height: 900px;
+$small-height: 700px;
+
+//WIDTH
+
+@mixin small-mobile {
+  @media (max-width: $small-mobile) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width + 1px}) {
+    @content;
+  }
+}
+
+@mixin container {
+  @media (min-width: #{$desktop-width}) and (max-width: #{$container-width + 60px}) {
+    @content;
+  }
+}
+
+
+@mixin medium-desktop {
+  @media (max-width: 1300px) {
+    @content;
+  }
+}
+
+//HEIGHT
+@mixin big-height {
+  @media (min-height: #{$normal-height + 1px}) {
+    @content;
+  }
+}
+
+@mixin medium-height {
+  @media (max-height: #{$normal-height}) {
+    @content;
+  }
+}
+
+@mixin small-height {
+  @media (max-height: #{$small-height}) {
+    @content;
+  }
+}

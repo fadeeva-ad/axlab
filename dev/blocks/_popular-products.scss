@@ -1,0 +1,70 @@
+@import 'variables';
+
+.popular-products{
+    padding-top: 60px;
+
+    &__title{
+        font-size: 24px;
+        letter-spacing: 0.02em;
+        text-decoration: none;
+        color: inherit;
+
+        img{
+            position: relative;
+            bottom: -2px;
+            transition: all ease-out 00.3s;
+        }
+
+        &:hover{
+            img{
+                transform: translateX(15px);
+            }
+        }
+    }  
+
+    &__list{
+       margin-top: 33px;
+       display: flex;
+       justify-content: space-between; 
+    }
+
+    &__list-item{
+        width: 30%;
+        padding-bottom: 30%;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        text-decoration: none;
+        color: white;
+        background-size: cover;
+        background-position: center center;
+
+        &:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: rgba(79, 60, 45, 0.2);
+        }
+    }
+
+    &__text-faded{
+        height: 50%;
+        width: 100%;
+        background: rgba(79, 60, 45, 0.2);
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        padding-left: 14px;
+        line-height: 23px;
+        font-size: 24px;
+
+        span{
+            max-width: 159px;
+        }
+    }
+}

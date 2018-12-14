@@ -1,0 +1,67 @@
+@import 'variables';
+
+.container { 
+    max-width: $container-width;
+    margin: auto;
+    width: 100%;
+
+    @include container {
+        padding: 0px 30px; 
+    }
+
+    @include tablet {
+        padding: 0 20px;  
+    }
+
+    @include mobile {
+        padding: 0 14px;
+    }
+}
+ 
+
+.page { 
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Circe';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+
+    @include tablet {
+        padding-top: 55px;
+    }
+
+    @include mobile {
+        background: transparent;
+    }
+}
+
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+
+
+
+@import '../../node_modules/filepond/dist/filepond';
+@import 'fancybox';
+@import 'jInvertScroll'; 
+@import 'swiper';
+@import 'animate';
+@import 'input';
+@import 'headers';
+@import 'btn';
+@import 'search';
+@import 'radio';
+@import 'counter';
+@import 'bread-crumbs';
+@import 'menu-btn';
+@import 'header';
+@import 'main-slider'; 
+@import 'footer';
+@import 'form';
+@import 'menu';

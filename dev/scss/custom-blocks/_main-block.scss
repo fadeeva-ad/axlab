@@ -1,0 +1,27 @@
+@import '../blocks/variables';
+
+.main-block{
+    display: flex;
+    height: 100vh;
+}
+
+.horizon{
+    z-index: 1;
+    
+}
+
+.middle{
+    z-index: 2;
+}
+
+
+.modals{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba($black, 0.4);
+    height: 100%;
+    min-width: 100%;
+    display: none;
+    z-index: 10;
+}

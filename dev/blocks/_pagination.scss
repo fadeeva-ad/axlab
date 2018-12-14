@@ -1,0 +1,36 @@
+@import 'variables';
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    padding-top: 77px;
+    
+    &__item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        transition: all 0.3s;
+        text-decoration: none;
+        line-height: 24px;
+        color: inherit;
+        font-size: 24px;
+        font-weight: 300;
+
+        &_prev{
+            .pagination__arrow{
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__arrow{
+        width: auto;
+        height: 13px;
+
+        path{
+            fill: $black;
+        }
+    }
+}

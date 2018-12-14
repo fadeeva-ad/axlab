@@ -1,0 +1,151 @@
+@import 'variables';
+
+.search{
+
+    
+    @include mobile{
+        display: none;
+    }
+   
+    &_mobile{
+        @include mobile{
+            display: block;
+        }   
+    }
+    
+    &_mobile-filter{
+        @include mobile{
+            display: block;
+        }
+    }
+    
+    &__field{
+        margin-top: 38px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        @include mobile{
+            display: none;
+        }
+    }
+
+    &__input{
+        margin-right: 15px;
+        border-radius: 0;
+        border: 0;
+        border-bottom: 1px solid $gold;
+        padding-left: 10px;
+        width: 19%;
+    }
+
+    &__btn{
+        text-decoration: none;
+        color: $black;
+    }
+
+    &__list{
+        margin-top: 38px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include mobile{
+            display: none;
+        }
+    }
+
+    &__title{
+        color: $gold;
+        line-height: 18px;
+        font-size: 18px;
+        margin-right: 20px;
+    }
+
+    &__list-item{
+        font-size: 18px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: inherit;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        transition: all ease-out 0.2s;
+
+        &:hover, &:active, &:focus{
+            color: $gold;
+        }
+
+        @include mobile{
+            margin-bottom: 10px;
+            width: 15%;
+        }
+
+        &_active{
+            font-weight: 500;
+            color: $gold;
+        }
+
+        &_left{
+            .search__list-hidden{
+                left: 0;
+            }
+        }
+
+        &_right{
+            .search__list-hidden{
+                right: 0;
+            }
+        }
+
+        &_center{
+            .search__list-hidden{
+                left: 0;
+                transform: translateX(-40%);
+            }
+        }
+    }
+
+    &__list-hidden{
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        margin: 0;
+        padding: 10px 20px;
+        background-color: $white;
+        font-size: 14px;
+        text-transform: none;
+        list-style: none;
+        border: 1px solid $gold;
+        border-radius: 10px;
+        z-index: 11;
+        cursor: default;
+
+        li{ 
+            margin-top: 10px;
+        }
+
+        a{
+            text-decoration: none;
+            color: $black;
+            transition: all ease-out 0.25s;
+
+            &:hover{
+                color: $darkGold;
+            }
+        }
+    }
+
+    &__bottom{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 7px;
+        align-items: center;
+
+        @include mobile{
+            display: none;
+        }
+    }
+}

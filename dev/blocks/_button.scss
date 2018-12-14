@@ -1,0 +1,15 @@
+@import 'variables';
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 138px;
+    height: 31px;
+    background-color: #927265;
+    text-align: center;
+    text-decoration: none;
+    color: $white;
+    line-height: 14px;
+    font-size: 14px;
+}

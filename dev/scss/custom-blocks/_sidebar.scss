@@ -1,0 +1,90 @@
+@import '../blocks/variables';
+
+.sidebar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    &_active {
+        .sidebar__wrapper {
+            transform: translate(0);
+        }
+    }
+
+    &__top {
+        background-color: #F2F3F5;
+        padding: 32px 43px 63px;
+        display: flex;
+        flex-direction: column;
+        min-height: 262px;
+    }
+
+    &__bottom{
+        flex: auto;
+        background-color: #fff;
+    }
+
+    &__wrapper {
+        min-width: 900px;
+        width: 80%;
+        height: 100%;
+        transform: translateX(110%);
+        transition: all ease-out 0.25s;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    &__close{
+        align-self: flex-end;
+        display: inline-block;
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+
+        line{
+            stroke: black;
+            stroke-width: 3px;
+        }
+    }
+
+    &__title{
+        line-height: normal;
+        font-size: 48px;
+        margin: 0;
+        font-weight: 400;
+    }
+
+    &__subtitle{
+        line-height: 32px;
+        font-size: 18px;
+    }
+
+    &__list{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__list-item{
+        padding: 0;
+        display: inline-block;
+        margin-right: 30px;
+        font-size: 24px;
+        text-transform: lowercase;
+        font-weight: 300;
+        margin-top: 30px;
+
+        &:hover{
+            color: $orange;
+        }
+    }
+
+    &__link{
+        text-decoration: none;
+        color: inherit;
+        transition: all ease-out 0.25s;
+    }
+}
